@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if [[ $1 == "--config" ]]; then
+if [[ $1 == "--config" ]] ; then
   cat <<EOF
 {
   "configVersion":"v1",
@@ -17,5 +17,6 @@ if [[ $1 == "--config" ]]; then
 }
 EOF
 else
-  echo "schedule"
+  binding=$(cat $BINDING_CONTEXT_PATH)
+  echo "Message from 'schedule' hook with 5 fields crontab: $binding"
 fi
