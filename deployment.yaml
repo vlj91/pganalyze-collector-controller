@@ -53,6 +53,6 @@ spec:
     spec:
       containers:
       - name: controller
-        image: ghcr.io/vlj91/pganalyze-collector-controller:sha-30442cd
+        image: ghcr.io/vlj91/pganalyze-collector-controller:master
         imagePullPolicy: Always
       serviceAccountName: controller
