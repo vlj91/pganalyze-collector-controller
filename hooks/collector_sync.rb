@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 
 def config
   puts '{"configVersion":"v1","onStartup":10}'
