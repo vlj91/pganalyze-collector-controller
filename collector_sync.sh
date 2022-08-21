@@ -6,7 +6,7 @@ function __config__() {
   cat <<EOF
     configVersion: v1
     schedule:
-    - crontab: "*/1 * * * *"
+    - crontab: "* * * * *"
       allowFailure: true
 EOF
 }
