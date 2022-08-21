@@ -1,0 +1,4 @@
+configVersion: v1
+schedule:
+- crontab: "*/1 * * * *"
+  allowFailure: true

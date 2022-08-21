@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 
+require 'json'
+require 'yaml'
+
 def config
-  puts '{"configVersion":"v1","onStartup":10}'
+  puts YAML.load_file("config.yml").to_json
 end
 
 def sync
