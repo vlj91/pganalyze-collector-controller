@@ -1,22 +1,18 @@
 #!/usr/bin/env bash
 
-if [[ $1 == "--config" ]] ; then
+source /shell_lib.sh
+
+function __config__() {
   cat <<EOF
-{
-  "configVersion":"v1",
-  "schedule": [
-    {
-      "name": "every 1 min",
-      "crontab": "*/1 * * * *"
-    },
-    {
-      "name": "every 5 min",
-      "crontab": "*/5 * * * *"
-    }
-  ]
-}
+    configVersion: v1
+    schedule:
+    - crontab: "*/1 * * * *"
+      allowFailure: true
 EOF
-else
-  binding=$(cat $BINDING_CONTEXT_PATH)
-  echo "Message from 'schedule' hook with 5 fields crontab: $binding"
-fi
+}
+
+function __main__() {
+  echo "main"
+}
+
+hook::run "$@"
