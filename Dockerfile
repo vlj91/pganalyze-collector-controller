@@ -1,3 +1,2 @@
-FROM flant/shell-operator:v1.0.0-beta.12-alpine3.11
-
-COPY ./hooks/ /hooks/
+FROM flant/shell-operator:latest
+ADD hooks /hooks
