@@ -1,18 +1,12 @@
 #!/bin/bash
 
-source /shell_lib.sh
-
-function __config__() {
+if [[ $1 == "--config" ]]; then
   cat <<EOF
     configVersion: v1
     schedule:
     - crontab: "* * * * *"
       allowFailure: true
 EOF
-}
-
-function __main__() {
-  echo "main"
-}
-
-hook::run "$@"
+else
+  echo "schedule"
+fi
